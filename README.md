@@ -14,24 +14,24 @@ server.OnConnect += (src) => {
     var message = new WebSocketMessage("try");
     message.Content["test"] = 123;
 
-        server.SendMessage(src, message);
+    server.SendMessage(src, message);
 
-    };
+};
 
-    server.OnDisconnect += (src) => {
+server.OnDisconnect += (src) => {
 
-        Console.WriteLine("Someone disconnected! IP: " + ((IPEndPoint)src.Socket.LocalEndPoint).Address.MapToIPv4());
+   Console.WriteLine("Someone disconnected! IP: " + ((IPEndPoint)src.Socket.LocalEndPoint).Address.MapToIPv4());
 
-    };
+};
 
-    server.On["test"] = (src, e) => {
+server.On["test"] = (src, e) => {
 
-         Console.WriteLine("test send:");
-         Console.WriteLine(e.Message.Content["name"]);
+    Console.WriteLine("test send:");
+    Console.WriteLine(e.Message.Content["name"]);
 
-    };
+};
 
-    server.Start();
+server.Start();
 
 ```
 
