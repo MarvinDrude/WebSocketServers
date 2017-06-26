@@ -38,7 +38,7 @@ server.OnConnect += (src) => {
 For Javascript client you need my MWebSocket.js
 
 Usage:
-```
+```JavaScript
 
 var socket;
 
